@@ -1,6 +1,5 @@
-from math import *
-from numpy import *
 import matplotlib.pyplot as plt
+from numpy import *
 
 n = 50
 
@@ -10,6 +9,7 @@ with open('100.txt', 'r') as file:
   
 js=[]
 
+# Расчет ф-ции ФАК
 for k in range(0, 2* n - 1, 1):
   j= k-n+1
   s=0
@@ -37,7 +37,7 @@ for i in range (0, int((n/4)+1), 1):
   for j in range(0,n,1):
     
     a += (2 / n) * float(js[j]) * cos(w * i * j)
-    
+
   P = float((a * a))    
   f  = int((i/(n*dt)))
   data_x.append(f)
@@ -45,6 +45,7 @@ for i in range (0, int((n/4)+1), 1):
 
   print ("w",f,"=","{:6f}".format (P))
 
+# Отображение в процентах
 data_z = [ i * (100/max(data_y)) for i in data_y]
 
 plt.plot(data_x,data_z)
@@ -54,4 +55,6 @@ plt.xlabel("Частота, Гц")
 plt.grid(True, linewidth=1,linestyle = '-.')
 
 plt.title("Энергетический спектр")
+
+# Функция построения графика
 plt.show()

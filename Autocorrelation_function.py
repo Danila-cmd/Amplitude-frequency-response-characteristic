@@ -1,6 +1,6 @@
-from math import *
 import matplotlib.pyplot as plt
 
+# Функция считывания данных и файла формата "100.txt"
 with open('100.txt', 'r') as file:
     nums = file.readlines()
     nums = [a.rstrip('\n') for a in nums]
@@ -27,4 +27,6 @@ for k in range(0, 2* n - 1, 1):
   print (j, s, sep = "\t")
 
 plt.plot(jl, js)
+
+# Функция построения графика
 plt.show()
